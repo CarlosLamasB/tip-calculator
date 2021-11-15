@@ -1,0 +1,197 @@
+﻿body{ background: hsl(185, 41%, 84%);}
+@media(max-width: 1440px){
+  body{display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:800px;
+    width:100%; 
+    position: relative;}
+  
+  .son{ background: hsl(0, 0%, 100%);
+  height:70%;
+    width:80%;
+    border-radius:10px;
+     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gs1{height:75%;
+    width:45%; 
+    background: white;
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;}
+  
+  p{font-size: 12px;
+    font-family: 'Space Mono', monospace;
+    color: hsl(186, 14%, 43%);
+  }
+  
+  .splitter{display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+  width: 50px;
+    background:transparent;
+  position: absolute;
+  top: 2%;}
+  
+  .splitter2{display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height:50px;
+  width: 50px;
+    background:transparent;
+  position: absolute;
+  top: 6%;}
+  
+  .splitter>p{font-size: 20px;
+  letter-spacing: 0.25em;
+    color: hsl(186, 14%, 43%);
+  }
+  
+  .splitter2>p{font-size: 20px;
+  letter-spacing: 0.25em;
+    color: hsl(186, 14%, 43%);
+  }
+  
+  .ggs1{ flex-grow:1;
+  background:white;
+  width:90%;
+  position:relative;}
+  
+  .billbar{background:hsl(189, 41%, 97%);
+  width:100%;
+  height: 40%;
+  border-radius:5px;
+  border:0px;
+  padding:0;
+  position: absolute;}
+  
+ .ggs2{ flex-grow: 3;
+  background: white;
+   width:90%;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;}
+  
+  .ggs2-son{ background:white;
+  width:100%;
+  flex-grow:1;
+  
+  position: relative;}
+  .bad-ggs2-son{ background:white;
+  width:100%;
+  flex-grow:1;
+  
+  position: relative;}
+  .ggs2-son>div{background: hsl(183,100%,15%);
+  width:30%;
+  height:50%;
+  border-radius:5px;
+  
+  }
+  .ggs2-gs1{position: absolute;
+  bottom: 7%;
+  left: 0%;
+  order:1;}
+  
+  .ggs2-gs2{position: absolute;
+  bottom: 7%;
+  left: 35%;
+  order:2;
+  background: hsl(183,0%,15%);}
+  
+  .ggs2-gs3{position: absolute;
+  bottom: 7%;
+  right:0%;
+  }
+  
+  .bad-ggs2-gs1{position: absolute;
+  top: 7%;
+  left: 0%;
+  order:1;}
+  
+  .bad-ggs2-gs2{position: absolute;
+  top: 7%;
+  left: 35%;
+  order:2;
+  }
+  .custom{position: absolute;
+  top: 7%;
+  right: 0%;
+  order:3;}
+  
+  .ggs1>div>p{
+    position: absolute;
+    top:100%;
+  z-index:2;}
+  .bad-ggs2-son>div{background: hsl(183,100%,15%);
+  width:30%;
+  height:50%;
+  border-radius:5px;
+  }
+  .bad-ggs2-son>.custom{background:hsl(189, 41%, 97%);
+    width:30%;
+  height:50%;
+  border-radius:5px;
+  
+    padding:0;
+  border:0px;}
+  
+  .ggs3{ flex-grow:1;
+  background:white;
+   width:90%;
+  position:relative;}
+  
+  .gs2{height:75%;
+    width:45%; 
+  background: hsl(183,100%,15%);
+   border-radius:10px;
+  position:relative;}
+  .reset{background: hsl(184, 14%, 56%);
+    width:80%;
+  height: 10%;
+    border-radius:5px;
+    position:absolute;
+  left:10%;
+  bottom: 10%;}
+  span{ color:white;
+  }
+  .TipAmount{position:absolute;
+  left:10%;
+  top: 10%;}
+}
+.total{ 
+  position:absolute;
+  left:10%;
+  top: 30%;}
+.TipAmountCount{position:absolute;
+  right:10%;
+  top: 10%;}
+
+.totalcount{
+  position:absolute;
+  right:10%;
+  top: 30%;}
+/* A partir de aqui, vamos a definir las pseudoclases*/
+input:hover{
+ 
+  border: 2px solid cyan;
+}
+input.custom:hover{
+  border: 2px solid cyan;
+}
+
+div.ggs2-gs1:hover{background:hsl(172, 67%, 45%);}
+div.ggs2-gs2:hover{background:hsl(172, 67%, 45%);}
+div.ggs2-gs3:hover{background:hsl(172, 67%, 45%);} div.bad-ggs2-gs1:hover,
+div.bad-ggs2-gs2:hover{background:hsl(172, 67%, 45%) ;}
+div.reset:hover{background:hsl(172, 67%,45%);}

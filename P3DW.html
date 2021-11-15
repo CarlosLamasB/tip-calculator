@@ -1,0 +1,171 @@
+﻿<html>
+  <head>
+<link rel="stylesheet" type="text/css" href="P3DWcss.css" media="screen" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="splitter">
+    <p>SPLI</p>
+    </div>
+  <div class="splitter2">
+    <p>TTER</p>
+    </div>
+ <div class="son">
+  
+   <div class="gs1">
+     <div class="ggs1"><p>Bill</p>
+       <input type="text" class="billbar" id="bill" placeholder= "0"/>
+       
+       <div><p> Select Tip%</p></div>
+       </div>
+     <div class="ggs2">
+       <div class="ggs2-son">
+         
+         <div class="ggs2-gs1" id="tip5" >
+         <p id="ptip5">
+           5%
+           </p>
+         </div>
+         <div class="ggs2-gs2" id="tip10" value="10">
+         <p id="ptip10">
+           10%
+           </p>
+         </div>
+         <div class="ggs2-gs3" id="tip15">
+         <p id="ptip15">
+           15%
+           </p>
+         </div>
+       </div>
+       <div class="bad-ggs2-son">
+         <div class="bad-ggs2-gs1" id="tip25">
+           <p id="ptip25">
+             25%
+           </p>
+         </div>
+         <div class="bad-ggs2-gs2" id="tip50">
+           <p id="ptip50">
+             50%
+           </p>
+         </div>
+         <input type= "text" class="custom" id="custom" placeholder="custom"/>
+         
+         
+       </div>
+      </div>
+     <div class="ggs3">
+       <p>Number of People</p>
+       <input type="text"  class="billbar" id="numberofPeople"/>
+     </div>
+   </div>
+      <div class="gs2">
+        <div class="TipAmount">
+          <p><span> Tip Amount</span><br>
+            / person</p>
+        </div>
+        <div class="total">
+          <p><span>Total</span><br>/ person</p>
+        </div>
+        <div class= "TipAmountCount" id="tipAmountCount">
+         
+        </div>
+        <div class="totalcount" id="totalCount">
+        </div>
+        <div class="reset" id="reset">
+        </div>
+     </div>
+   
+     </div>
+  
+  </div>
+  <script>
+
+let mbill= document.getElementById("bill");
+let elbill= document.getElementById("bill").value;
+
+let elnumberOfPeople= document.getElementById("numberofPeople");
+let numberOfPeople= elnumberOfPeople.value;
+let eltipAmountCount= document.getElementById("tipAmountCount");
+
+let ptAC=document.createElement('p');
+let x =document.createTextNode('0.00');
+ptAC.appendChild(x);
+eltipAmountCount.appendChild(ptAC);
+
+let eltotalCount= document.getElementById("totalCount");
+
+let ptC=document.createElement('p');
+let y=document.createTextNode('0.00');
+ptC.appendChild(y);
+eltotalCount.appendChild(ptC);
+
+let elreset= document.getElementById("reset");
+
+let eltip5= document.getElementById("tip5");
+let elptip5= document.getElementById("ptip5");
+let eltip10= document.getElementById("tip10");
+let elptip10= document.getElementById("ptip10");
+let eltip15= document.getElementById("tip15");
+let elptip15= document.getElementById("ptip15");
+let eltip25= document.getElementById("tip25");
+let elptip25= document.getElementById("ptip25");
+let eltip50= document.getElementById("tip50");
+let elptip50= document.getElementById("ptip50");
+let elcustom= document.getElementById("custom");
+let truetip=1;
+function tipo(event){ 
+   
+  var el= event.target;
+    if (el==eltip5 || el==elptip5){
+      tip=5/100;
+        }
+  else if (el==eltip10 || el==elptip10){tip=10/100;}
+  else if (el==eltip15 || el==elptip15){tip=15/100;}
+  else if (el==eltip25 || el==elptip25){tip=25/100;}
+  else if (el==eltip50 || el==elptip50){tip=50/100;}
+  else {tip = el.value/100};
+ event.stopPropagation();
+truetip=tip;};
+
+
+eltip5.addEventListener('click',function(event){tipo(event);},false);
+eltip10.addEventListener('click',function(event){tipo(event);},false);
+eltip15.addEventListener('click',function(event){tipo(event);},false);
+eltip25.addEventListener('click',function(event){tipo(event);},false);
+eltip50.addEventListener('click',function(event){tipo(event);},false);
+elcustom.addEventListener('click',function(event){tipo(event);},false);
+
+
+function split(a,b){
+  return a/b;
+}
+function splitter1(){
+ if(elbill==0){elbill=document.getElementById("bill").value;}
+  else { let elbill2=document.getElementById("bill").value;
+    elbill=elbill2;
+       } 
+    if(numberOfPeople==0){numberOfPeople=document.getElementById("numberofPeople").value;}
+  else { let number2=document.getElementById("numberofPeople").value;
+    numberOfPeople=number2;
+       } 
+  let r=split(elbill,numberOfPeople)*truetip;
+  x.nodeValue= r.toFixed(2);//era necesario ponerle 2 decimales
+  let s= split(elbill,numberOfPeople)*(truetip+1);
+  y.nodeValue= s.toFixed(2);//era necesario ponerle 2 decimales
+  event.stopPropagation();
+    };
+elnumberOfPeople.addEventListener('click',splitter1,false);
+mbill.addEventListener('click',splitter1,false);
+ 
+function reset(){let elinputs=document.getElementsByTagName('input');
+                 elinputs[0].value="";
+                 elinputs[1].value="";
+                 elinputs[2].value="";
+                x.nodeValue="0.00";
+                y.nodeValue="0.00";
+                };
+elreset.addEventListener('click',reset,false);
+</script>
+</body>
+</html>
